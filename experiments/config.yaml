@@ -1,0 +1,30 @@
+data_root: ./data/processed
+dataset: TVSum/folds/fold_1/test
+eval:
+  budget_ratio: 0.15
+log_dir: ./experiments/logs
+model:
+  dropout: 0.1
+  gat_layers: 2
+  heads: 4
+  hidden: 256
+  segment_len: 16
+  text_dim: 384
+  use_contrastive: true
+  use_text: true
+  video_dim: 2048
+save_dir: ./experiments/saved_models/TVSum_fold_1
+seed: 42
+training:
+  batch_size: 8
+  device: cuda
+  epochs: 60
+  grad_clip: 1.0
+  lr: 0.0003
+  weight_decay: 0.0001
+train:
+  epochs: 60
+  lr: 0.0003
+  weight_decay: 0.0001
+  batch_size: 8
+  seed: 1337
